@@ -1,0 +1,33 @@
+<div
+  class="flex flex-col justify-center items-center h-screen flex-wrap bg-white"
+>
+  <div class="flex p-2">
+    <div class="max-w-2xl rounded overflow-hidden shadow-lg">
+      <div class="px-6 py-4 bg-green-600 leading-tight px-6 py-4 bg-green-600 leading-tight flex flex-col">
+        <% if @name.present? %>
+          <div class="font-sans text-5xl font-black text-white"><%= @name.split("-").join(" ").humanize.titleize %></div>
+          <div class="font-sans text-5xl font-black text-white">
+            Okey!
+          </div>
+          <div class="font-sans text-5xl font-black text-white">Run</div>
+          <%= link_to "Share the link okey.run/#{@name.parameterize}", "http://okey.run/#{@name.parameterize}", class: "font-sans text-sm font-black text-white" %>
+        <% else %>
+          <%= form_tag root_path, method: 'get', class: "w-full flex flex-row justify-between items-center relative" do %>
+            <%= text_field_tag :name, @name, placeholder: "Add name...", class: "appearance-none block w-full shadow bg-white text-gray-700 border border-primary-200 rounded py-3 pl-4 pr-12 leading-tight focus:outline-none focus:bg-white focus:border-primary-400 focus:shadow-md" %>
+            <%= button_tag(type: "get", class: "absolute right-0 w-8 h-8 mr-3 rounded-full bg-gray-200 text-gray-600 hover:bg-primary-100 hover:text-primary-500 flex items-center justify-center focus:outline-none focus:text-primary-500") do %>
+              <i title="Add name" class="fas fa-arrow-right text-lg"></i>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="px-6 py-4 flex flex-col items-center">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+          #ItsOkey.run
+        </span>
+      </div>
+    </div>
+  </div>
+  <p class="text-center text-gray-500 text-xs m-5">
+    ©2019 bodhi. All rights reserved.
+  </p>
+</div>
