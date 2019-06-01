@@ -17,7 +17,13 @@
             <!--          <div class="font-sans text-5xl font-black text-white">Run</div>-->
             <%= link_to "Share the link okey.run/#{@name.parameterize}", "http://okey.run/#{@name.parameterize}", class: "font-sans text-sm font-black text-white" %>
           <% else %>
-            <p class="font-bold text-5xl text-white pb-2"> ഓടിക്ക് </p>
+            <p class="font-bold text-5xl text-white"> ഓടിക്ക് </p>
+            <p class="font-bold text-lg text-white">
+              എല്ലാരെയും ഓടിക്കൂ...
+            </p>
+            <p class="font-bold text-lg text-white pb-2">
+              സന്തോഷിക്കൂ!
+            </p>
             <%= form_tag root_path, method: 'get', class: "w-full flex flex-row justify-between items-center relative" do %>
               <%= text_field_tag :name, @name, placeholder: "Add name...", class: "appearance-none block w-full shadow bg-white text-gray-700 border border-primary-200 rounded py-3 pl-4 pr-12 leading-tight focus:outline-none focus:bg-white focus:border-primary-400 focus:shadow-md" %>
               <%= button_tag(type: "get", class: "absolute right-0 w-8 h-8 mr-3 rounded-full bg-gray-200 text-gray-600 hover:bg-primary-100 hover:text-primary-500 flex items-center justify-center focus:outline-none focus:text-primary-500") do %>
