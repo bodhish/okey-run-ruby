@@ -12,7 +12,7 @@
           <% if @name.present? %>
             <div class="font-sans text-5xl font-black text-white"><%= @name.split("-").join(" ").humanize.titleize %></div>
             <div class="font-sans text-5xl font-black text-white font-semibold">
-              ഓടിക്കൊ
+              ഓടിക്കോ
             </div>
             <!--          <div class="font-sans text-5xl font-black text-white">Run</div>-->
             <%= link_to "Share the link okey.run/#{@name.parameterize}", "http://okey.run/#{@name.parameterize}", class: "font-sans text-sm font-black text-white" %>
@@ -25,15 +25,27 @@
             <% end %>
           <% end %>
         </div>
+        <div class="px-6 py-4 flex flex-col items-center">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-2xl font-semibold text-gray-700 mr-2">
+          <% if @name.present? %>
+          <%= @count.number %> പേർ ഓടിച്ചു
+          <% else %>
+          <%= @count.number %> പേർ ഓടിച്ചു
+          <% end %>
+        </span>
+        </div>
         <a href="/" class="px-6 py-4 flex flex-col items-center">
         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
           #ItsOkey.run
         </span>
         </a>
       </div>
+      <p class="text-center text-gray-500 text-xs m-5">
+        ©2019 bodhi. All rights reserved.
+      </p>
+      <a href="https://wa.me/+919148262104" class="text-center text-gray-500 text-xs ">
+        Contact
+      </a>
     </div>
-    <p class="text-center text-gray-500 text-xs m-5">
-      ©2019 bodhi. All rights reserved.
-    </p>
   </div>
 </div>
