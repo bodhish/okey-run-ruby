@@ -5,34 +5,35 @@
     <div id="walk-container">
       <div id="walk"></div>
     </div>
-    <div class="flex flex-col justify-start items-center h-screen flex-wrap bg-white">
-      <div class="max-w-2xl rounded overflow-hidden shadow-lg">
+    <div class="flex flex-col">
+      <div class="flex flex-col justify-start items-center flex-wrap bg-white">
+        <div class="max-w-2xl rounded overflow-hidden shadow-lg">
 
-        <div class="px-6 py-4 bg-green-600 leading-tight px-6 py-4 bg-green-600 leading-tight flex flex-col">
-          <% if @name.present? %>
-            <div class="font-sans text-5xl font-black text-white"><%= @name.split("-").join(" ").humanize.titleize %></div>
-            <div class="font-sans text-5xl font-black text-white font-semibold">
-              ഓടിക്കോ
-            </div>
-            <!--          <div class="font-sans text-5xl font-black text-white">Run</div>-->
-            <%= link_to "Share the link okey.run/#{@name.parameterize}", "http://okey.run/#{@name.parameterize}", class: "font-sans text-sm font-black text-white" %>
-          <% else %>
-            <p class="font-bold text-5xl text-white"> ഓടിക്ക് </p>
-            <p class="font-bold text-lg text-white">
-              എല്ലാരെയും ഓടിക്കൂ...
-            </p>
-            <p class="font-bold text-lg text-white pb-2">
-              സന്തോഷിക്കൂ!
-            </p>
-            <%= form_tag root_path, method: 'get', class: "w-full flex flex-row justify-between items-center relative" do %>
-              <%= text_field_tag :name, @name, placeholder: "Add name...", class: "appearance-none block w-full shadow bg-white text-gray-700 border border-primary-200 rounded py-3 pl-4 pr-12 leading-tight focus:outline-none focus:bg-white focus:border-primary-400 focus:shadow-md" %>
-              <%= button_tag(type: "get", class: "absolute right-0 w-8 h-8 mr-3 rounded-full bg-gray-200 text-gray-600 hover:bg-primary-100 hover:text-primary-500 flex items-center justify-center focus:outline-none focus:text-primary-500") do %>
-                <i title="Add name" class="fas fa-arrow-right text-lg"></i>
+          <div class="px-6 py-4 bg-green-600 leading-tight px-6 py-4 bg-green-600 leading-tight flex flex-col">
+            <% if @name.present? %>
+              <div class="font-sans text-5xl font-black text-white"><%= @name.split("-").join(" ").humanize.titleize %></div>
+              <div class="font-sans text-5xl font-black text-white font-semibold">
+                ഓടിക്കോ
+              </div>
+              <!--          <div class="font-sans text-5xl font-black text-white">Run</div>-->
+              <%= link_to "Share the link okey.run/#{@name.parameterize}", "http://okey.run/#{@name.parameterize}", class: "font-sans text-sm font-black text-white" %>
+            <% else %>
+              <p class="font-bold text-5xl text-white"> ഓടിക്ക് </p>
+              <p class="font-bold text-lg text-white">
+                എല്ലാരെയും ഓടിക്കൂ...
+              </p>
+              <p class="font-bold text-lg text-white pb-2">
+                സന്തോഷിക്കൂ!
+              </p>
+              <%= form_tag root_path, method: 'get', class: "w-full flex flex-row justify-between items-center relative" do %>
+                <%= text_field_tag :name, @name, placeholder: "Add name...", class: "appearance-none block w-full shadow bg-white text-gray-700 border border-primary-200 rounded py-3 pl-4 pr-12 leading-tight focus:outline-none focus:bg-white focus:border-primary-400 focus:shadow-md" %>
+                <%= button_tag(type: "get", class: "absolute right-0 w-8 h-8 mr-3 rounded-full bg-gray-200 text-gray-600 hover:bg-primary-100 hover:text-primary-500 flex items-center justify-center focus:outline-none focus:text-primary-500") do %>
+                  <i title="Add name" class="fas fa-arrow-right text-lg"></i>
+                <% end %>
               <% end %>
             <% end %>
-          <% end %>
-        </div>
-        <div class="px-6 py-4 flex flex-col items-center">
+          </div>
+          <div class="px-6 py-4 flex flex-col items-center">
         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-2xl font-semibold text-gray-700 mr-2">
           <% if @name.present? %>
           <%= @visit.number %> പേർ ഓടിച്ചു
@@ -40,19 +41,25 @@
           മൊത്തം ഓടിപ്പിച്ചത് <%= @count.number %>
           <% end %>
         </span>
-        </div>
-        <a href="/" class="px-6 py-4 flex flex-col items-center">
+          </div>
+          <a href="/" class="px-6 py-4 flex flex-col items-center">
         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
           #ItsOkey.run
         </span>
-        </a>
+          </a>
+        </div>
+        <div class="justify-center flex flex-col">
+          <p class="text-center text-gray-500 text-lg mx-2 mt-2">
+            A simple name counter made for motivating people to run
+          </p>
+          <p class="text-center text-gray-500 text-xs mx-2 mt-2">
+            ©2019 bodhi. All rights reserved.
+          </p>
+          <a href="https://wa.me/+919148262104" class="text-center text-gray-500 text-xs ">
+            Contact
+          </a>
+        </div>
       </div>
-      <p class="text-center text-gray-500 text-xs m-5">
-        ©2019 bodhi. All rights reserved.
-      </p>
-      <a href="https://wa.me/+919148262104" class="text-center text-gray-500 text-xs ">
-        Contact
-      </a>
     </div>
   </div>
 </div>
