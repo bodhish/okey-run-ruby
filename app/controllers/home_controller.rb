@@ -6,7 +6,11 @@ class HomeController < ApplicationController
     if @name.present?
       @visits = Visit.where(title: @name)
       if @visits.any?
-        @visits.first.update(number: @visits.first.number + 1)
+        if @visits.first.title.downcase == "dona"
+          @visits.first
+        else
+          @visits.first.update(number: @visits.first.number + 1)
+        end
       else
         @visits = [create_name]
       end
